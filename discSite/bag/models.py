@@ -22,6 +22,7 @@ class BaseDisc(models.Model):
     turn = models.FloatField(blank=True, null=True)
     fade = models.FloatField(blank=True, null=True)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='discs')
+    type = models.CharField(max_length=40, blank=True, null=True) #  make choices distance, fairway, midrange, putter, etc.
 
     def __str__(self):
         return self.name
@@ -49,11 +50,6 @@ class Plastic(models.Model):
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='plastic')
     name = models.CharField(max_length=80)
     description = models.TextField(blank=True, null=True)
-
-
-class Inventory(models.Model):
-    #  add through model
-    pass
 
 
 class Bag(models.Model):
