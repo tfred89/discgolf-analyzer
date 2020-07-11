@@ -22,13 +22,14 @@ class BaseDisc(models.Model):
     turn = models.FloatField(blank=True, null=True)
     fade = models.FloatField(blank=True, null=True)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='discs')
-    type = models.CharField(max_length=40, blank=True, null=True) #  make choices distance, fairway, midrange, putter, etc.
+    style = models.CharField(max_length=40, blank=True, null=True) #  make choices distance, fairway, midrange, putter, etc.
+    img = models.CharField(max_length=240, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        ordering = ['speed']
+        ordering = ['manufacturer', 'speed']
     
 
 class Disc(BaseDisc):
