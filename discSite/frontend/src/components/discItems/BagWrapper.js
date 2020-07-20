@@ -1,25 +1,22 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DiscItem from './DiscItem.js';
 import Spinner from '../layout/Spinner';
 import BagContext from '../../context/bag/bagContext';
 
-const Discs = () => {
+const BagWrapper = () => {
     const bagContext = useContext(BagContext);
-    const { loading, discs, searchDiscs, loadUser } = bagContext;
+    const { loading, discs, loadDiscs, loadUser } = bagContext;
 
     useEffect(() => {
-        searchDiscs();
+        loadDiscs();
         loadUser();
         // eslint-disable-next-line
     }, []);
 
     if (loading) return <Spinner />;
     return (
-        <div style={discStyle}>
-            {discs.map((disc) => (
-                <DiscItem key={disc.id} disc={disc} />
-            ))}
-        </div>
+        <div><h1>Test </h1></div>
+ 
     );
 };
 
@@ -29,4 +26,4 @@ const discStyle = {
     gridGap: "1rem",
   };
 
-export default Discs
+export default BagWrapper;

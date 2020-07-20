@@ -9,7 +9,9 @@ import {
     DELETE_BAG,
     SAVE_BAG,
     SAVE_INVENTORY,
-    SEARCH_DISC
+    SEARCH_DISC,
+    LOAD_DISCS,
+    LOAD_USER
 } from '../types';
 
 export default (state, action) => {
@@ -23,6 +25,18 @@ export default (state, action) => {
             return {
                 ...state,
                 discs: action.payload,
+                loading: false,
+            };
+        case LOAD_DISCS:
+            return {
+                ...state,
+                discs: action.payload,
+                loading: false,
+            };
+        case LOAD_USER:
+            return {
+                ...state,
+                user: action.payload,
                 loading: false,
             };
         default:

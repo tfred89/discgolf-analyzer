@@ -13,7 +13,9 @@ import {
     DELETE_BAG,
     SAVE_BAG,
     SAVE_INVENTORY,
-    SEARCH_DISC
+    SEARCH_DISC,
+    LOAD_USER,
+    LOAD_DISCS,
 } from '../types';
 
 const BagState = props => {
@@ -27,10 +29,38 @@ const BagState = props => {
 
     const setLoading = () => dispatch({ type: SET_LOADING });
 
+    // load user:
+    const loadUser = async () => {
+        setLoading();
+        let url = "/user";
+        const res = await axios.get(url);
+        console.log(res);
+        console.log(res.data);
+
+        dispatch({
+            type: LOAD_USER,
+            payload: res.data,
+        });
+    };
+
+    // load discs
+    const loadDiscs = async () => {
+        setLoading();
+        // let url = 'http://127.0.0.1:8000/api/v1/discs/';
+        let url = "/discs";
+        const res = await axios.get(url);
+
+        dispatch({
+            type: LOAD_DISCS,
+            payload: res.data,
+        });
+    };
+
     // search discs
     const searchDiscs = async () => {
         setLoading();
-        let url = 'http://127.0.0.1:8000/api/v1/discs/';
+        // let url = 'http://127.0.0.1:8000/api/v1/discs/';
+        let url = "/discs";
         const res = await axios.get(url);
 
         dispatch({
@@ -65,6 +95,8 @@ const BagState = props => {
             loading: state.loading,
             searchDiscs,
             setLoading,
+            loadUser,
+            loadDiscs
         }}
         >
             {props.children}

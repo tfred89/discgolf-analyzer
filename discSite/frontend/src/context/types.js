@@ -11,5 +11,7 @@ export const DELETE_BAG = 'DELETE_BAG';
 export const SAVE_BAG = 'SAVE_BAG';
 export const SAVE_INVENTORY = 'SAVE_INVENTORY';
 export const SEARCH_DISC = 'SEARCH_DISC';
+export const LOAD_USER = 'LOAD_USER';
+export const LOAD_DISCS = 'LOAD_DISCS';
 
 // Added initially on 7/8/20, revise or remove as needed
