@@ -37,7 +37,18 @@
     "user": {
         "name": "Trent Frederick",
         "email": "trentfrederick@gmail.com",
-        "inventory": [],
+        "inventory": [
+            {
+                "id": 3,
+                "manufacturer": "discraft",
+                "name": "Buzzz",
+                "speed": 5.0,
+                "glide": 4.0,
+                "turn": -1.0,
+                "fade": 1.0,
+                "style": "midrange",
+                "img": "https://infinitediscs.com/Inf_Uploads/Disc_Images/DI_b1593e-e74f.jpg"
+            }],
         "bag": []
     }
 }

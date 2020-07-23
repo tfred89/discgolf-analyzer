@@ -13,5 +13,7 @@ export const SAVE_INVENTORY = 'SAVE_INVENTORY';
 export const SEARCH_DISC = 'SEARCH_DISC';
 export const LOAD_USER = 'LOAD_USER';
 export const LOAD_DISCS = 'LOAD_DISCS';
+export const LOAD_BAG = 'LOAD_BAG';
+export const LOAD_INV = 'LOAD_INV';
 
 // Added initially on 7/8/20, revise or remove as needed

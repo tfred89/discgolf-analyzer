@@ -11,7 +11,9 @@ import {
     SAVE_INVENTORY,
     SEARCH_DISC,
     LOAD_DISCS,
-    LOAD_USER
+    LOAD_USER,
+    LOAD_BAG,
+    LOAD_INV
 } from '../types';
 
 export default (state, action) => {
@@ -37,6 +39,18 @@ export default (state, action) => {
             return {
                 ...state,
                 user: action.payload,
+                loading: false,
+            };
+        case LOAD_BAG:
+            return {
+                ...state,
+                bag: action.payload,
+                loading: false,
+            };
+        case LOAD_INV:
+            return {
+                ...state,
+                inventory: action.payload,
                 loading: false,
             };
         default:

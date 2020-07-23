@@ -16,6 +16,8 @@ import {
     SEARCH_DISC,
     LOAD_USER,
     LOAD_DISCS,
+    LOAD_BAG,
+    LOAD_INV
 } from '../types';
 
 const BagState = props => {
@@ -23,19 +25,38 @@ const BagState = props => {
         user: {},  // currently plannning on having user disc inventory and bags as arrays in user object
         discs: [],
         loading: false,
+        inventory: [],
+        bag: []
     };
 
     const [state, dispatch] = useReducer(BagReducer, initialState);
 
     const setLoading = () => dispatch({ type: SET_LOADING });
 
+    // load users bag
+    const loadBag = (data) => {
+         dispatch({
+             type: LOAD_BAG,
+             payload: data,
+         });
+    }
+
+
+    const loadInv = (data) => {
+        dispatch({
+            type: LOAD_INV,
+            payload: data,
+        });
+    }
     // load user:
     const loadUser = async () => {
         setLoading();
         let url = "/user";
         const res = await axios.get(url);
-        console.log(res);
-        console.log(res.data);
+        const bagData = res.data.bag;
+        const invData = res.data.inventory;
+        loadBag(bagData);
+        loadInv(invData);
 
         dispatch({
             type: LOAD_USER,
@@ -93,6 +114,8 @@ const BagState = props => {
             user: state.user,
             discs: state.discs,
             loading: state.loading,
+            bag: state.bag,
+            inventory: state.inventory,
             searchDiscs,
             setLoading,
             loadUser,

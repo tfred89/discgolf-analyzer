@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import DiscItem from './DiscItem.js';
 import Spinner from '../layout/Spinner';
 import BagContext from '../../context/bag/bagContext';
+import InventoryContainer from './InventoryContainer';
+import InventoryItem from './InventoryItem.js';
 
 const BagWrapper = () => {
     const bagContext = useContext(BagContext);
-    const { loading, discs, loadDiscs, loadUser } = bagContext;
+    const { loading, discs, loadDiscs, loadUser, user } = bagContext;
 
     useEffect(() => {
         loadDiscs();
@@ -13,17 +15,24 @@ const BagWrapper = () => {
         // eslint-disable-next-line
     }, []);
 
+
     if (loading) return <Spinner />;
     return (
-        <div><h1>Test </h1></div>
- 
+
+            <div style={viewItem}>
+                Main View Item
+            
+                <InventoryContainer />
+            </div>
+                
     );
 };
 
-const discStyle = {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gridGap: "1rem",
-  };
+const viewItem = {
+    padding: '2%',
+    border: "navy 1px dotted",
+    height: "100%",
+    width: "100%",
+}
 
 export default BagWrapper;

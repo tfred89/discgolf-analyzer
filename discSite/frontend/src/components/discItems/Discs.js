@@ -13,7 +13,9 @@ const Discs = () => {
         // eslint-disable-next-line
     }, []);
 
+
     if (loading) return <Spinner />;
+
     return (
         <div style={discStyle}>
             {discs.map((disc) => (
