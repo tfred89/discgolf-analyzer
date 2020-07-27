@@ -37,7 +37,46 @@
     "user": {
         "name": "Trent Frederick",
         "email": "trentfrederick@gmail.com",
+        "hand": "rhbh",
         "inventory": [
+            {
+                "id": 1,
+                "manufacturer": "Innova",
+                "name": "Wraith",
+                "speed": 11.0,
+                "glide": 5.0,
+                "turn": -1.0,
+                "fade": 3.0,
+                "style": "D",
+                "img": "https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Image01226f108.jpg",
+                "condition": 8,
+                "bagged": false,
+                "discData": {
+                  "distance": 400,
+                  "HST": -19,
+                  "LSF": 61,
+                  "type": "D"
+                }
+            },
+            {
+                "id": 2,
+                "manufacturer": "Innova",
+                "name": "Destroyer",
+                "speed": 12.0,
+                "glide": 5.0,
+                "turn": -1.0,
+                "fade": 3.0,
+                "style": "D",
+                "condition": 10,
+                "bagged": false,
+                "discData": {
+                  "distance": 430,
+                  "HST": -19,
+                  "LSF": 61,
+                  "type": "D"
+                },
+                "img": "https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+            },
             {
                 "id": 3,
                 "manufacturer": "discraft",
@@ -46,9 +85,19 @@
                 "glide": 4.0,
                 "turn": -1.0,
                 "fade": 1.0,
-                "style": "midrange",
+                "style": "M",
+                "condition": 2,
+                "bagged": false,
+                "discData": {
+                  "distance": 293,
+                  "HST": -18,
+                  "LSF": 24,
+                  "type": "M"
+                },
                 "img": "https://infinitediscs.com/Inf_Uploads/Disc_Images/DI_b1593e-e74f.jpg"
             }],
-        "bag": []
+        "bag": [
+
+        ]
     }
 }

@@ -7,11 +7,11 @@ const Discs = () => {
     const bagContext = useContext(BagContext);
     const { loading, discs, searchDiscs, loadUser } = bagContext;
 
-    useEffect(() => {
-        searchDiscs();
-        loadUser();
-        // eslint-disable-next-line
-    }, []);
+    // useEffect(() => {
+    //     searchDiscs();
+    //     loadUser();
+    //     // eslint-disable-next-line
+    // }, []);
 
 
     if (loading) return <Spinner />;

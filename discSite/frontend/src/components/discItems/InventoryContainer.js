@@ -2,11 +2,13 @@ import React, { useContext, useEffect, Fragment } from "react";
 import InventoryItem from "./InventoryItem.js";
 import BagContext from "../../context/bag/bagContext";
 
+
 const InventoryContainer = () => {
 
-
+// This isnt currently working, mock data in use
   const bagContext = useContext(BagContext);
   const { loading, inventory } = bagContext;
+
 
   if (loading)
     return (
@@ -17,13 +19,13 @@ const InventoryContainer = () => {
 
   if (typeof inventory !== "undefined") {
     return (
-        <ul id="slide-out" className="sidenav">
+        <div >
           {inventory.map((item) => (
-            <Fragment>
-              <InventoryItem disc={item} key={item.id} />
+            <Fragment key={item.id}>
+              <InventoryItem disc={item} key={item.id}/>
             </Fragment>
           ))}
-        </ul>
+        </div>
         
     );
   }

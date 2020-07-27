@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Discs from "./components/discItems/Discs";
 import BagWrapper from "./components/discItems/BagWrapper";
 import BagState from "./context/bag/BagState";
+import InventoryContainer from "./components/discItems/InventoryContainer";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -47,8 +48,10 @@ const App = () => {
                 </nav>
 
                 {/* Side Item */}
-                <div></div>
-                <div style={drawerItem}>
+                <div>
+                  <InventoryContainer />
+                </div>
+                {/* <div style={drawerItem}>
                   <img
                     src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
                     alt=""
@@ -96,8 +99,8 @@ const App = () => {
                 11 5 -1 3
               </div>
             </div>
-            <div style={drawerItem}>
-              <img
+            <div style={drawerItem}> */}
+              {/* <img
                 src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
                 alt=""
                 style={invImg}
@@ -106,9 +109,8 @@ const App = () => {
                 Innova Wraith
                 <br />
                 11 5 -1 3
-              </div>
+              </div> */}
             </div>
-              </div>
     
             </div>
 
@@ -139,8 +141,6 @@ const App = () => {
 };
 
 const testStyle = {
-  maxWidth: "80% !important",
-  width: "80% !important",
   border: "dotted red",
   height: "800px",
   margin: "2% auto",
