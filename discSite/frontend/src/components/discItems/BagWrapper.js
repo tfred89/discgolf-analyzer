@@ -17,7 +17,6 @@ const BagWrapper = () => {
 
     loadDiscs();
     loadUser();
-    console.log('THIS IS GETTING HIT A LOT')
     // eslint-disable-next-line
   }, []);
 
@@ -51,7 +50,7 @@ const BagWrapper = () => {
           getAriaValueText={valueText}
           aria-labeledby="discrete-slider-always"
           step={1}
-          marks={marks}
+          marks={true}
           valueLabelDisplay="on"
           orientation="horizontal"
           onChange={updatePwr}

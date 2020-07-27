@@ -316,6 +316,7 @@ const FlightChart = ({ bag, pwr }) => {
   useEffect(() => {
     function handleResize() {
       if (window.innerHeight !== dimensions.height) {
+        resetBuffers()
         setDimensions({
           height: window.innerHeight,
           width: window.innerWidth,

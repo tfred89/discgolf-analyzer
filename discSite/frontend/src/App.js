@@ -116,23 +116,7 @@ const App = () => {
 
 
             {/* Bottom Tabs */}
-            <div style={buttonRow}>
-              <div className="row">
-                <div className="col s12">
-                  <ul className="tabs">
-                    <li className="tab col s4">
-                      <a href="#test1">Bag</a>
-                    </li>
-                    <li className="tab col s4">
-                      <a href="#test2">Flight Chart</a>
-                    </li>
-                    <li className="tab col s4">
-                      <a href="#test3">Number Chart</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </Router>
