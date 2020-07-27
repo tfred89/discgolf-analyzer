@@ -25,7 +25,9 @@ const useStyles = makeStyles({
   },
   cardGrid:{
     display:"flex",
-    flexDirection:"column",
+    flexDirection:"row",
+    justifyContent: "space-between",
+    width: "100%"
   },
   cardActions: {
     display: 'flex',

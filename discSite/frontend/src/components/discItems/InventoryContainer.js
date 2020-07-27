@@ -19,7 +19,7 @@ const InventoryContainer = () => {
 
   if (typeof inventory !== "undefined") {
     return (
-        <div >
+        <div style={{height:"100%"}}>
           {inventory.map((item) => (
             <Fragment key={item.id}>
               <InventoryItem disc={item} key={item.id}/>

@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Discs from "./components/discItems/Discs";
 import BagWrapper from "./components/discItems/BagWrapper";
 import BagState from "./context/bag/BagState";
+import Grid from '@material-ui/core/Grid';
 import InventoryContainer from "./components/discItems/InventoryContainer";
 
 import "materialize-css/dist/css/materialize.min.css";
@@ -21,103 +22,46 @@ const App = () => {
       <Router>
         <div className="App">
           <Navbar title="Disc Bag Dev" />
-          <div className="container" style={testStyle}>
-            {/* Main Viewing Area */}
-            <div style={testMainView}>
-              <BagWrapper />
-            </div>
-
-            {/* Side Drawer */}
-            <div style={tabRow}>
-              {/* Side Drawer Header / Bar */}
-              <div style={drawerHeader}>
-                <nav className="blue">
-                  <div className="nav-wrapper" style={{ paddingLeft: "10px" }}>
-                    <a href="#" className="brand-logo">
-                      Inventory
-                    </a>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                      <li>
-                        <a href="#">Bag</a>
-                      </li>
-                      <li>
-                        <a href="#">Inventory</a>
-                      </li>
-                    </ul>
+          <Grid
+                container
+                spacing={0}
+                direction="row"
+                alignItems="stretch"
+            >
+                <Grid item xs={12} sm={8} md={8} lg={8} xl={9}>
+                  <div style={testMainView}>
+                      <BagWrapper />
                   </div>
-                </nav>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={3}>
+                <div style={tabRow}>
+                  {/* Side Drawer Header / Bar */}
+                  <div style={drawerHeader}>
+                    <nav className="blue">
+                      <div className="nav-wrapper" style={{ paddingLeft: "10px" }}>
+                        <a href="#" className="brand-logo">
+                          Inventory
+                        </a>
+                        <ul id="nav-mobile" className="right hide-on-med-and-down">
+                          <li>
+                            <a href="#">Bag</a>
+                          </li>
+                          <li>
+                            <a href="#">Inventory</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
 
-                {/* Side Item */}
-                <div>
-                  <InventoryContainer />
-                </div>
-                {/* <div style={drawerItem}>
-                  <img
-                    src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
-                    alt=""
-                    style={invImg}
-                  />
-                  <div>
-                    Innova Wraith
-                    <br />
-                    11 5 -1 3
-                  </div>
-                </div>
-                <div style={drawerItem}>
-                  <img
-                    src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
-                    alt=""
-                    style={invImg}
-                  />
-                  <div>
-                    Innova Wraith
-                    <br />
-                    11 5 -1 3
-                  </div>
-                </div>
-                <div style={drawerItem}>
-                  <img
-                    src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
-                    alt=""
-                    style={invImg}
-                  />
-                  <div>
-                    Innova Wraith
-                    <br />
-                    11 5 -1 3
-                  </div>
-                </div>
-                <div style={drawerItem}>
-              <img
-                src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
-                alt=""
-                style={invImg}
-              />
-              <div>
-                Innova Wraith
-                <br />
-                11 5 -1 3
-              </div>
-            </div>
-            <div style={drawerItem}> */}
-              {/* <img
-                src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
-                alt=""
-                style={invImg}
-              />
-              <div>
-                Innova Wraith
-                <br />
-                11 5 -1 3
-              </div> */}
-            </div>
-    
-            </div>
+                    {/* Side Item */}
+                    <div>
+                      <InventoryContainer />
+                    </div>
+                    </div>
+                    </div>
+                </Grid>
+            </Grid>
 
-
-            {/* Bottom Tabs */}
-
-          </div>
         </div>
       </Router>
     </BagState>
@@ -141,8 +85,10 @@ const testMainView = {
   border: "double green",
   gridArea: "1 / 1 / 7 / 5",
   padding: "2%",
+  height: "600px"
 };
 const tabRow = {
+  height: "auto",
   border: "dashed blue",
   gridArea: "1 / 5 / -2 / -1",
   overflow: "auto"
@@ -161,3 +107,102 @@ const invImg = {
   marginRight: "auto",
 };
 export default App;
+
+
+// <div className="container" style={testStyle}>
+// {/* Main Viewing Area */}
+// <div style={testMainView}>
+//   <BagWrapper />
+// </div>
+
+// {/* Side Drawer */}
+// <div style={tabRow}>
+//   {/* Side Drawer Header / Bar */}
+//   <div style={drawerHeader}>
+//     <nav className="blue">
+//       <div className="nav-wrapper" style={{ paddingLeft: "10px" }}>
+//         <a href="#" className="brand-logo">
+//           Inventory
+//         </a>
+//         <ul id="nav-mobile" className="right hide-on-med-and-down">
+//           <li>
+//             <a href="#">Bag</a>
+//           </li>
+//           <li>
+//             <a href="#">Inventory</a>
+//           </li>
+//         </ul>
+//       </div>
+//     </nav>
+
+//     {/* Side Item */}
+//     <div>
+//       <InventoryContainer />
+//     </div>
+//     {/* <div style={drawerItem}>
+//       <img
+//         src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+//         alt=""
+//         style={invImg}
+//       />
+//       <div>
+//         Innova Wraith
+//         <br />
+//         11 5 -1 3
+//       </div>
+//     </div>
+//     <div style={drawerItem}>
+//       <img
+//         src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+//         alt=""
+//         style={invImg}
+//       />
+//       <div>
+//         Innova Wraith
+//         <br />
+//         11 5 -1 3
+//       </div>
+//     </div>
+//     <div style={drawerItem}>
+//       <img
+//         src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+//         alt=""
+//         style={invImg}
+//       />
+//       <div>
+//         Innova Wraith
+//         <br />
+//         11 5 -1 3
+//       </div>
+//     </div>
+//     <div style={drawerItem}>
+//   <img
+//     src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+//     alt=""
+//     style={invImg}
+//   />
+//   <div>
+//     Innova Wraith
+//     <br />
+//     11 5 -1 3
+//   </div>
+// </div>
+// <div style={drawerItem}> */}
+//   {/* <img
+//     src="https://infinitediscs.com/Inf_Uploads/Inventory_Images/II_Infinite0020ba9cc.jpg"
+//     alt=""
+//     style={invImg}
+//   />
+//   <div>
+//     Innova Wraith
+//     <br />
+//     11 5 -1 3
+//   </div> */}
+// </div>
+
+// </div>
+
+
+// {/* Bottom Tabs */}
+
+// </div>
