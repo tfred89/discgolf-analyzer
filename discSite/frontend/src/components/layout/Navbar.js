@@ -246,7 +246,8 @@ export default function Navbar() {
           {[classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar
+        className={classes.toolbar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -311,6 +312,9 @@ export default function Navbar() {
           </div>
         </Toolbar>
       </AppBar>
+      {/* <main className={classes.content}>
+
+      </main> */}
       
 
       {renderMobileMenu}
