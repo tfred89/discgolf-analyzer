@@ -312,9 +312,9 @@ export default function Navbar() {
           </div>
         </Toolbar>
       </AppBar>
-      {/* <main className={classes.content}>
+      <main className={classes.content}>
 
-      </main> */}
+      </main>
       
 
       {renderMobileMenu}

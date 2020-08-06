@@ -25,21 +25,31 @@ const App = () => {
           <Navbar title="Disc Bag Dev" />
    
           <SideDrawer />
- 
-          <Grid
-                container
-                spacing={0}
-                direction="row"
-                alignItems="stretch"
-                style={mainGridClass}
-            >
-                <Grid item xs={12} sm={8} md={8} lg={8} xl={9}>
-                  <div style={testMainView}>
-                      <BagWrapper />
-                  </div>
-                </Grid>
 
-            </Grid>
+            <Switch>
+              <Route path='/bag'>
+                <Grid
+                  container
+                  spacing={0}
+                  direction="row"
+                  alignItems="stretch"
+                  style={mainGridClass}
+              >
+                  <Grid item xs={12} sm={8} md={8} lg={8} xl={9}>
+                    <div style={testMainView}>
+                        <BagWrapper />
+                    </div>
+                  </Grid>
+                </Grid>
+              </Route>
+            </Switch>
+            
+            <Switch>
+              <Route path='/discs'>
+                <Discs />
+              </Route>
+            </Switch>
+
 
         </div>
       </Router>
